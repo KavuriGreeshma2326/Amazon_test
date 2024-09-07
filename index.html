@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>Amazon</title>
+    <style>
+    body {
+        margin: 0;
+        font-family: "Arial";
+    }
+    .container {
+        background-color: #B2BEB5;
+        height: 370vh;
+        grid-template-areas:
+            "top"
+        }
+    .top {
+        grid-area: top;
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        height: 7vh;
+        padding: 10px;
+        margin-bottom: 0;
+        position: sticky;
+        top: 0;
+        }
+    .top img:first-child {
+        height: 6vh;
+        width: 20vh;
+        margin: 10px;
+        }
+    .top img:last-child {
+        height: 10vh;
+        margin: 10px;
+        }
+    .top-list {
+        margin: 15px;
+        font-size: 14px;
+        }
+    .search-box {
+        width: 580px;
+        height: 6.8vh;
+        padding: 10px;
+        border-width: 0;
+        border-radius: 6px;
+        font-size: 16px;
+        }
+    .menu-container {
+        background-color: #36454f;
+        color: white;
+        display: flex;
+        align-items: center;
+        height: 7vh;
+        padding: 0;
+        margin-bottom: 0;
+        }
+    .menu-list {
+        margin: 10px;
+        font-size: 14.5px;
+        }
+    .box-container {
+        height: 70vh;
+        width: 45vh;
+        background-color: white;
+        margin: 20px;
+        margin-right: 0;
+        margin-bottom: 10px;
+        padding: 20px;
+    }
+    .top-products-heading {
+        color: black;
+        font-family: "Arial";
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .top-products {
+        height: 20vh;
+        width: 18vh;
+        padding-top: 8px;
+        padding-left: 15px;
+    }
+    .top-products-names {
+        text-align: center;
+        color: black;
+        font-family: "Arial";
+        font-size: 13px;
+    }
+    .link {
+        color: blue;
+        font-family: "Arial";
+        font-size: 14px;
+    }
+    .box-wrapper {
+            display: flex;
+            gap: 0px;
+        }
+    .longbox-container {
+        height: 40vh;
+        width: cover;
+        background-color: white;
+        margin: 20px;
+        padding: 20px;
+    }
+    .longbox-container-products {
+        height: 31vh;
+        width: 31vh;
+        padding-top: 8px;
+        padding-left: 15px;
+    }
+    .longbox2-container-products {
+        height: 35vh;
+        width: 17vh;
+        padding-top: 8px;
+        padding-left: 30px;
+    }
+    .longbox3-container-products {
+        height: 34vh;
+        width: 15vh;
+        padding-top: 8px;
+        padding-left: 30px;
+    }
+    .footer {
+        text-align: center;
+            background-color: #232f3e;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            flex: 1; 
+            min-width: 150px;
+            margin: 10px;
+        }
+
+        .footer-column h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-column ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    </style>
+</head>
+  <body>
+    <div class = "container">
+        <div class = "top">
+            <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhr996sdZeZZ4FTxWakyw_ZQeuBMTssKIgmg&s" alt = "Company Logo">
+            <p class = "top-list">Deliver to Greeshma<br>Guntur 522003</p>
+            <input type="search" class="search-box" placeholder="Search...">
+            <p class = "top-list">EN</p>
+            <p class = "top-list">Hello Greeshma<br>Accounts & Lists</p>
+            <p class = "top-list">Return<br>& Orders</p>
+            <img src = "data:image/png;base64,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" alt = "Add To Cart Logo">
+        </div>
+        <div class = "menu-container">
+            <p class = "menu-list">All</p>
+            <p class = "menu-list">Amazon miniTV</p>
+            <p class = "menu-list">Sell</p>
+            <p class = "menu-list">Today's Deals</p>
+            <p class = "menu-list">Amazon Pay</p>
+            <p class = "menu-list">Best Sellers</p>
+            <p class = "menu-list">Buy Again</p>
+            <p class = "menu-list">Prime</p>
+            <p class = "menu-list">Mobiles</p>
+            <p class = "menu-list">Customer Service</p>
+            <p class = "menu-list">Gift Cards</p>
+            <p class = "menu-list">Electronics</p>
+            <p class = "menu-list">New Services</p>
+        </div>
+        <div class="box-wrapper">
+            <div class="box-container">
+                <h class="top-products-heading">Pick up where you left off</h>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="https://f.media-amazon.com/images/I/71ZP6U9sWTL._AC_SY220_.jpg" alt="products" class = "top-products">
+                            <p class = "top-products-names">Apple iPhone 15...</p>
+                        </td>
+                        <td>
+                            <img src="https://f.media-amazon.com/images/I/71d7rfSl0wL._AC_SY220_.jpg" alt="products" class = "top-products">
+                            <p class = "top-products-names">Apple iPhone 15...</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://f.media-amazon.com/images/I/61bK6PMOC3L._AC_SY220_.jpg" alt="products" class = "top-products">
+                            <p class = "top-products-names">Apple iPhone 14...</p>
+                        </td>
+                        <td>
+                            <img src="https://f.media-amazon.com/images/I/61WAINtWPPL._AC_SY220_.jpg" alt="products" class = "top-products">
+                            <p class = "top-products-names">Apple iPhone 14...</p>
+                        </td>
+                    </tr>
+                </table>
+                <h class="link">See more</h>
+            </div>
+            <div class="box-container">
+                <h class="top-products-heading">Revamp your home in style</h>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="https://f.media-amazon.com/images/G/31/IMG20/Home/2024/Gateway/BTFGW/PCQC/New/2x/372x232_Home_furnishings_2._SY232_CB555629502_.jpg" alt="products" class = "top-products">
+                            <p class = "top-products-names">Cushion covers..</p>
+                        </td>
+                        <td>
+                            <img src="https://f.media-amazon.com/images/G/31/IMG20/Home/2024/Gateway/BTFGW/PCQC/New/2x/372x232_Home_decor_1._SY232_CB555629502_.jpg" alt="products" class = "top-products">
+                            <p class = "top-products-names">Figurines..</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://f.media-amazon.com/images/G/31/IMG20/Home/2024/Gateway/BTFGW/PCQC/New/2x/372x232_Home_storage_1._SY232_CB555629502_.jpg" alt="products" class = "top-products">
+                            <p class = "top-products-names">Home storage</p>
+                        </td>
+                        <td>
+                            <img src="https://f.media-amazon.com/images/G/31/IMG20/Home/2024/Gateway/BTFGW/PCQC/New/2x/372x232_Home_lighting_2_-_Copy._SY232_CB555629502_.jpg" alt="products" class = "top-products">
+                            <p class = "top-products-names">Lighting Solutions</p>
+                        </td>
+                    </tr>
+                </table>
+                <h class="link">Explore all</h>
+            </div>
+            <div class="box-container">
+                <h class="top-products-heading">Starting 99Rs</h>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="https://f.media-amazon.com/images/G/31/img23/HI/SYED/ATF/QC-adapts_376x232_4._SY232_CB600489960_.jpg" alt="products" class = "top-products">
+                            <p class = "top-products-names">Spin mops..</p>
+                        </td>
+                        <td>
+                            <img src="https://f.media-amazon.com/images/G/31/img23/HI/SYED/ATF/QC-adapts_376x232_3._SY232_CB600489960_.jpg" alt="products" class = "top-products">
+                            <p class = "top-products-names">Bathroom..</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://f.media-amazon.com/images/G/31/img23/HI/SYED/ATF/QC-adapts_376x232_7._SY232_CB600489960_.jpg" alt="products" class = "top-products">
+                            <p class = "top-products-names">Hammers..</p>
+                        </td>
+                        <td>
+                            <img src="https://f.media-amazon.com/images/G/31/img23/HI/SYED/ATF/QC-adapts_376x232_5._SY232_CB600489960_.jpg" alt="products" class = "top-products">
+                            <p class = "top-products-names">Extension..</p>
+                        </td>
+                    </tr>
+                </table>
+                <h class="link">Explore all</h>
+            </div>
+            <div class="box-container">
+                <h class="top-products-heading">Top mobile accessories</h>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="https://f.media-amazon.com/images/G/31/img22/WLA/2023/MSOREFRESHDESKTOP/D87165616_IN_WLA_BAU_MSO_REFRESH-desktop-version_PC_QuadCard_372X232_3X7._SY232_CB602731451_.jpg" alt="products" class = "top-products">
+                            <p class = "top-products-names">Headsets</p>
+                        </td>
+                        <td>
+                            <img src="https://f.media-amazon.com/images/G/31/img22/WLA/2023/MSOREFRESHDESKTOP/D87165616_IN_WLA_BAU_MSO_REFRESH-desktop-version_PC_QuadCard_372X232_2X6._SY232_CB602731451_.jpg" alt="products" class = "top-products">
+                            <p class = "top-products-names">Cabels..</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://f.media-amazon.com/images/G/31/img22/WLA/2023/MSOREFRESHDESKTOP/D87165616_IN_WLA_BAU_MSO_REFRESH-desktop-version_PC_QuadCard_372X232_1X5._SY232_CB602731451_.jpg" alt="products" class = "top-products">
+                            <p class = "top-products-names">Cases &..</p>
+                        </td>
+                        <td>
+                            <img src="https://f.media-amazon.com/images/G/31/img22/WLA/2023/MSOREFRESHDESKTOP/D87165616_IN_WLA_BAU_MSO_REFRESH-desktop-version_PC_QuadCard_372X232_4X8._SY232_CB602731451_.jpg" alt="products" class = "top-products">
+                            <p class = "top-products-names">Powerbanks</p>
+                        </td>
+                    </tr>
+                </table>
+                <h class="link">See more</h>
+            </div>
+        </div>
+        <div class="longbox-container">
+            <h class="top-products-heading">Best Sellers in Computers & Accessories</h>
+            <table>
+                <tr>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/61UzQMCRaeL._AC_SY400_.jpg" alt="products" class = "longbox-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/61xNG4wjOuL._AC_SY400_.jpg" alt="products" class = "longbox-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/41nclnxOSLL._AC_SY400_.jpg" alt="products" class = "longbox-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/71MhtZF5NWL._AC_SY400_.jpg" alt="products" class = "longbox-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/41KuRShR97L._AC_SY400_.jpg" alt="products" class = "longbox-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/61okssN3Y6L._AC_SY400_.jpg" alt="products" class = "longbox-container-products">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="longbox-container">
+            <h class="top-products-heading">Best Sellers in Clothing & Accessories</h>
+            <table>
+                <tr>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/81TRdxk1wnL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/610InQb9rTL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/51NSC2qvOxL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/71x4rLhMkML._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/61SgADmAyDL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/61j9jJhrStL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/713n+TxyfCL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/61D7nbhylBL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/610IIi6wHuL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="longbox-container">
+            <h class="top-products-heading">Best Sellers in Beauty</h>
+            <table>
+                <tr>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/41v1L8K+11L._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/51O+J5jnXcL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/71aJPOi0-ML._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/61ma04zYXpL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/51GnlKdb3GL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/51-G+VRBzHL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/71waYmGy3EL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/51FRsJvhucL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/51JY3BnT-6L._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="longbox-container">
+            <h class="top-products-heading">Best Sellers in Beauty</h>
+            <table>
+                <tr>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/41v1L8K+11L._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/51O+J5jnXcL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/71aJPOi0-ML._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/61ma04zYXpL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/51GnlKdb3GL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/51-G+VRBzHL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/71waYmGy3EL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/51FRsJvhucL._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                    <td>
+                        <img src="https://f.media-amazon.com/images/I/51JY3BnT-6L._AC_SY400_.jpg" alt="products" class = "longbox2-container-products">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <footer class="footer">
+            <div class="footer-column">
+                <h3>Get to Know Us</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                    <li><a href="#">Amazon Science</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect with Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Make Money with Us</h3>
+                <ul>
+                    <li><a href="#">Sell on Amazon</a></li>
+                    <li><a href="#">Sell under Amazon Accelerator</a></li>
+                    <li><a href="#">Protect and Build Your Brand</a></li>
+                    <li><a href="#">Amazon Global Selling</a></li>
+                    <li><a href="#">Supply to Amazon</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Fulfilment by Amazon</a></li>
+                    <li><a href="#">Advertise Your Products</a></li>
+                    <li><a href="#">Amazon Pay on Merchants</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Let us help you</h3>
+                <ul>
+                    <li><a href="#">Your account</a></li>
+                    <li><a href="#">Returns centre</a></li>
+                    <li><a href="#">Recalls</a></li>
+                    <li><a href="#">100% purchase protection</a></li>
+                    <li><a href="#">Amazon app download</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+    </div>
+    </div>
+  </body>
+</html>
